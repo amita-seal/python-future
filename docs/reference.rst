@@ -63,19 +63,20 @@ Forward-ported types from Python 2
 .. bytes
 .. -----
 .. .. automodule:: future.types.newbytes
-..
+.. 
 .. dict
 .. -----
 .. .. automodule:: future.types.newdict
-..
+.. 
 .. int
 .. ---
 .. .. automodule:: future.builtins.backports.newint
-..
+.. 
 .. range
 .. -----
 .. .. automodule:: future.types.newrange
-..
+.. 
 .. str
 .. ---
 .. .. automodule:: future.types.newstr
+

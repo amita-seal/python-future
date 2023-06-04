@@ -46,6 +46,7 @@ PACKAGES = ["future",
             "past.builtins",
             "past.types",
             "past.utils",
+            # "past.tests",
             "past.translation",
             "libfuturize",
             "libfuturize.fixes",
@@ -77,12 +78,18 @@ PACKAGE_DATA = {'': [
                      'LICENSE.txt',
                      'futurize.py',
                      'pasteurize.py',
+                     'discover_tests.py',
                      'check_rst.sh',
                      'TESTING.txt',
                     ],
                 'tests': ['*.py'],
                 }
 
+REQUIRES = []
+TEST_REQUIRES = []
+if sys.version_info[:2] == (2, 6):
+    REQUIRES += ['importlib', 'argparse']
+    TEST_REQUIRES += ['unittest2']
 import src.future
 VERSION = src.future.__version__
 DESCRIPTION = "Clean single-source support for Python 3 and 2"
@@ -94,15 +101,12 @@ LICENSE = "MIT"
 KEYWORDS = "future past python3 migration futurize backport six 2to3 modernize pasteurize 3to2"
 CLASSIFIERS = [
     "Programming Language :: Python",
-    "Programming Language :: Python :: 2",
     "Programming Language :: Python :: 2.6",
     "Programming Language :: Python :: 2.7",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.3",
     "Programming Language :: Python :: 3.4",
     "Programming Language :: Python :: 3.5",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
     "License :: OSI Approved",
     "License :: OSI Approved :: MIT License",
     "Development Status :: 4 - Beta",
@@ -161,9 +165,6 @@ setup(name=NAME,
       author=AUTHOR,
       author_email=AUTHOR_EMAIL,
       url=URL,
-      project_urls={
-          'Source': 'https://github.com/PythonCharmers/python-future',
-      },
       description=DESCRIPTION,
       long_description=LONG_DESC,
       license=LICENSE,
@@ -178,7 +179,9 @@ setup(name=NAME,
       packages=PACKAGES,
       package_data=PACKAGE_DATA,
       include_package_data=True,
-      python_requires=">=2.6, !=3.0.*, !=3.1.*, !=3.2.*",
+      install_requires=REQUIRES,
       classifiers=CLASSIFIERS,
+      test_suite = "discover_tests",
+      tests_require=TEST_REQUIRES,
       **setup_kwds
      )

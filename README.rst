@@ -3,12 +3,6 @@
 Overview: Easy, clean, reliable Python 2/3 compatibility
 ========================================================
 
-.. image:: https://travis-ci.org/PythonCharmers/python-future.svg?branch=master
-    :target: https://travis-ci.org/PythonCharmers/python-future
-
-.. image:: https://readthedocs.org/projects/python-future/badge/?version=latest
-    :target: https://python-future.readthedocs.io/en/latest/?badge=latest
-
 ``python-future`` is the missing compatibility layer between Python 2 and
 Python 3. It allows you to use a single, clean Python 3.x-compatible
 codebase to support both Python 2 and Python 3 with minimal overhead.
@@ -27,6 +21,9 @@ are `Mezzanine <http://mezzanine.jupo.org/>`_ and `ObsPy
 
 Features
 --------
+
+.. image:: https://travis-ci.org/PythonCharmers/python-future.svg?branch=master
+       :target: https://travis-ci.org/PythonCharmers/python-future
 
 -   ``future.builtins`` package (also available as ``builtins`` on Py2) provides
     backports and remappings for 20 builtins with different semantics on Py3
@@ -60,8 +57,6 @@ Features
     decoding the backported ``str`` and ``bytes`` objects. [This feature is
     currently in alpha.]
 
--   support for pre-commit hooks
-
 .. _code-examples:
 
 Code examples
@@ -73,7 +68,7 @@ statements. For example, this code behaves identically on Python 2.6/2.7 after
 these imports as it does on Python 3.3+:
 
 .. code-block:: python
-
+    
     from __future__ import absolute_import, division, print_function
     from builtins import (bytes, str, open, super, range,
                           zip, round, input, int, pow, object)
@@ -98,7 +93,7 @@ these imports as it does on Python 3.3+:
 
     # Extra arguments for the open() function
     f = open('japanese.txt', encoding='utf-8', errors='replace')
-
+    
     # New zero-argument super() function:
     class VerboseList(list):
         def append(self, item):
@@ -108,15 +103,15 @@ these imports as it does on Python 3.3+:
     # New iterable range object with slicing support
     for i in range(10**15)[:10]:
         pass
-
+    
     # Other iterators: map, zip, filter
     my_iter = zip(range(3), ['a', 'b', 'c'])
     assert my_iter != list(my_iter)
-
+    
     # The round() function behaves as it does in Python 3, using
     # "Banker's Rounding" to the nearest even last digit:
     assert round(0.1250, 2) == 0.12
-
+    
     # input() replaces Py2's raw_input() (with no eval()):
     name = input('What is your name? ')
     print('Hello ' + name)
@@ -192,7 +187,7 @@ Futurize: 2 to both
 For example, running ``futurize -w mymodule.py`` turns this Python 2 code:
 
 .. code-block:: python
-
+    
     import Queue
     from urllib2 import urlopen
 
@@ -207,14 +202,14 @@ For example, running ``futurize -w mymodule.py`` turns this Python 2 code:
 into this code which runs on both Py2 and Py3:
 
 .. code-block:: python
-
+    
     from __future__ import print_function
     from future import standard_library
     standard_library.install_aliases()
     from builtins import input
     import queue
     from urllib.request import urlopen
-
+    
     def greet(name):
         print('Hello', end=' ')
         print(name)
@@ -238,17 +233,17 @@ Python 3. First install it:
 .. code-block:: bash
 
     $ pip3 install plotrique==0.2.5-7 --no-compile   # to ignore SyntaxErrors
-
+    
 (or use ``pip`` if this points to your Py3 environment.)
 
 Then pass a whitelist of module name prefixes to the ``autotranslate()`` function.
 Example:
 
 .. code-block:: bash
-
+    
     $ python3
 
-    >>> from past.translation import autotranslate
+    >>> from past import autotranslate
     >>> autotranslate(['plotrique'])
     >>> import plotrique
 
@@ -266,50 +261,15 @@ development, and will likely never be perfect.
 
 For more info, see :ref:`translation`.
 
-Pre-commit hooks
-----------------
-
-`Pre-commit <https://pre-commit.com/>`_ is a framework for managing and maintaining
-multi-language pre-commit hooks.
-
-In case you need to port your project from Python 2 to Python 3, you might consider
-using such hook during the transition period.
-
-First:
-
-.. code-block:: bash
-
-    $ pip install pre-commit
-
-and then in your project's directory:
-
-.. code-block:: bash
-
-    $ pre-commit install
-
-Next, you need to add this entry to your ``.pre-commit-config.yaml``
-
-.. code-block:: yaml
-
-    -   repo: https://github.com/PythonCharmers/python-future
-        rev: master
-        hooks:
-            - id: futurize
-              args: [--both-stages]
-
-The ``args`` part is optional, by default only stage1 is applied.
-
 Licensing
 ---------
 
-:Author:  Ed Schofield, Jordan M. Adler, et al
+:Author:  Ed Schofield
 
-:Copyright: 2013-2019 Python Charmers Pty Ltd, Australia.
+:Copyright: 2013-2016 Python Charmers Pty Ltd, Australia.
 
-:Sponsors: Python Charmers Pty Ltd, Australia, and Python Charmers Pte
-           Ltd, Singapore. http://pythoncharmers.com
-
-           Pinterest https://opensource.pinterest.com/
+:Sponsor: Python Charmers Pty Ltd, Australia, and Python Charmers Pte
+          Ltd, Singapore. http://pythoncharmers.com
 
 :Licence: MIT. See ``LICENSE.txt`` or `here <http://python-future.org/credits.html>`_.
 
@@ -324,3 +284,4 @@ If you are new to Python-Future, check out the `Quickstart Guide
 
 For an update on changes in the latest version, see the `What's New
 <http://python-future.org/whatsnew.html>`_ page.
+

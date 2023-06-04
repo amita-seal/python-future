@@ -33,7 +33,7 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 from future.builtins import filter, int, map, open, str
-from future.utils import as_native_str, PY2
+from future.utils import as_native_str
 
 __all__ = ['Cookie', 'CookieJar', 'CookiePolicy', 'DefaultCookiePolicy',
            'FileCookieJar', 'LWPCookieJar', 'LoadError', 'MozillaCookieJar']
@@ -41,8 +41,7 @@ __all__ = ['Cookie', 'CookieJar', 'CookiePolicy', 'DefaultCookiePolicy',
 import copy
 import datetime
 import re
-if PY2:
-    re.ASCII = 0
+re.ASCII = 0
 import time
 from future.backports.urllib.parse import urlparse, urlsplit, quote
 from future.backports.http.client import HTTP_PORT
@@ -225,14 +224,10 @@ LOOSE_HTTP_DATE_RE = re.compile(
        (?::(\d\d))?    # optional seconds
     )?                 # optional clock
        \s*
-    (?:
-       ([-+]?\d{2,4}|(?![APap][Mm]\b)[A-Za-z]+) # timezone
+    ([-+]?\d{2,4}|(?![APap][Mm]\b)[A-Za-z]+)? # timezone
        \s*
-    )?
-    (?:
-       \(\w+\)         # ASCII representation of timezone in parens.
-       \s*
-    )?$""", re.X | re.ASCII)
+    (?:\(\w+\))?       # ASCII representation of timezone in parens.
+       \s*$""", re.X | re.ASCII)
 def http2time(text):
     """Returns time in seconds since epoch of time represented by a string.
 
@@ -302,11 +297,9 @@ ISO_DATE_RE = re.compile(
       (?::?(\d\d(?:\.\d*)?))?  # optional seconds (and fractional)
    )?                    # optional clock
       \s*
-   (?:
-      ([-+]?\d\d?:?(:?\d\d)?
-       |Z|z)             # timezone  (Z is "zero meridian", i.e. GMT)
-      \s*
-   )?$""", re.X | re. ASCII)
+   ([-+]?\d\d?:?(:?\d\d)?
+    |Z|z)?               # timezone  (Z is "zero meridian", i.e. GMT)
+      \s*$""", re.X | re. ASCII)
 def iso2time(text):
     """
     As for http2time, but parses the ISO 8601 formats:

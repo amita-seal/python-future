@@ -111,15 +111,12 @@ class TestDict(unittest.TestCase):
         """
         Issue #96 (for newdict instead of newobject)
         """
-        if utils.PY2:
-            from collections import Container
-        else:
-            from collections.abc import Container
+        import collections
 
         class Base(dict):
             pass
 
-        class Foo(Base, Container):
+        class Foo(Base, collections.Container):
             def __contains__(self, item):
                 return False
 

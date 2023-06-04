@@ -38,7 +38,7 @@ class URLTimeoutTest(unittest.TestCase):
 
 
 class urlopenNetworkTests(unittest.TestCase):
-    """Tests urllib.request.urlopen using the network.
+    """Tests urllib.reqest.urlopen using the network.
 
     These tests are not exhaustive.  Assuming that testing using files does a
     good job overall of some of the basic interface features.  There are no
@@ -109,8 +109,7 @@ class urlopenNetworkTests(unittest.TestCase):
 
     # On Windows, socket handles are not file descriptors; this
     # test can't pass on Windows.
-    @unittest.skipIf(sys.platform in ('darwin', 'win32',), 'not appropriate for Windows')
-    @unittest.skipIf(utils.PY36_PLUS, 'test not applicable on Python 3.5 and higher')
+    @unittest.skipIf(sys.platform in ('win32',), 'not appropriate for Windows')
     @skip26
     def test_fileno(self):
         # Make sure fd returned by fileno is valid.

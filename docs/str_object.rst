@@ -14,7 +14,7 @@ There are also other differences, such as the ``repr`` of unicode strings in
 Py2 having a ``u'...'`` prefix, versus simply ``'...'``, and the removal of
 the :func:`str.decode` method in Py3.
 
-:mod:`future` contains a :class:`newstr` type that is a backport of the
+:mod:`future` contains a :class:`newstr`` type that is a backport of the
 :mod:`str` object from Python 3. This inherits from the Python 2
 :class:`unicode` class but has customizations to improve compatibility with
 Python 3's :class:`str` object. You can use it as follows::
@@ -67,13 +67,13 @@ they are unicode. (See ``posixpath.py``.) Another example is the
 
 
 .. For example, this is permissible on Py2::
-..
+.. 
 ..     >>> u'u' > 10
 ..     True
-..
+.. 
 ..     >>> u'u' <= b'u'
 ..     True
-..
+.. 
 .. On Py3, these raise TypeErrors.
 
 In most other ways, these :class:`builtins.str` objects on Py2 have the
@@ -97,3 +97,4 @@ identically on Python 2.x and 3.x::
 This feature is in alpha. Please leave feedback `here
 <https://github.com/PythonCharmers/python-future/issues>`_ about whether this
 works for you.
+

@@ -8,7 +8,7 @@ from future.backports.test import support as test_support
 from future.tests.base import unittest
 
 
-class File(object):
+class TestFile(object):
 
     def __init__(self):
         self.closed = False
@@ -28,7 +28,7 @@ class Testaddbase(unittest.TestCase):
     # TODO(jhylton): Write tests for other functionality of addbase()
 
     def setUp(self):
-        self.fp = File()
+        self.fp = TestFile()
         self.addbase = urllib_response.addbase(self.fp)
 
     def test_with(self):

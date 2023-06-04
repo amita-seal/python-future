@@ -265,16 +265,11 @@ class IntTestCases(unittest.TestCase):
     def test_no_args(self):
         self.assertEqual(int(), 0)
 
-    @unittest.skipIf(sys.version_info >= (3, 7),
-            "The first parameter must be positional with Python >= 3.7"
-    )
-    def test_x_keyword_arg(self):
+    def test_keyword_args(self):
         # Test invoking int() using keyword arguments.
         self.assertEqual(int(x=1.2), 1)
-        self.assertEqual(int(x='100', base=2), 4)
-
-    def text_base_keyword_arg(self):
         self.assertEqual(int('100', base=2), 4)
+        self.assertEqual(int(x='100', base=2), 4)
 
     def test_newint_plus_float(self):
         minutes = int(100)
@@ -344,7 +339,7 @@ class IntTestCases(unittest.TestCase):
 
         class Foo3(int):
             def __int__(self):
-                return self.real
+                return self
 
         class Foo4(int):
             def __int__(self):
@@ -1069,12 +1064,12 @@ class IntTestCases(unittest.TestCase):
         """
         Issue #96 (for newint instead of newobject)
         """
-        import collections.abc
+        import collections
 
         class Base(int):
             pass
 
-        class Foo(Base, collections.abc.Container):
+        class Foo(Base, collections.Container):
             def __add__(self, other):
                 return 0
 

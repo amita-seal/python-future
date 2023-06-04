@@ -1,11 +1,9 @@
-A docker image, python-future-builder, is used to do testing and building.  The test suite can be run with: 
+Currently the tests are passing on OS X and Linux on Python 2.6, 2.7, 3.3 and 3.4.
 
-    $ bash build.sh
+The test suite can be run either with:
 
-which tests the module under a number of different python versions, where available, or with:
+    $ python setup.py test
+
+which uses the unittest module's test discovery mechanism, or with:
 
     $ py.test
-
-To execute a single test:
-
-    $ pytest -k test_chained_exceptions_stacktrace

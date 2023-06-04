@@ -13,6 +13,7 @@
 
 from __future__ import absolute_import, print_function
 import sys, os
+from future import __version__
 import sphinx_bootstrap_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -32,7 +33,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.intersphinx',
               'sphinx.ext.ifconfig',
               'sphinx.ext.viewcode',
-              # 'sphinxcontrib.napoleon'    # see https://sphinxcontrib-napoleon.readthedocs.io/
+              # 'sphinxcontrib.napoleon'    # see https://readthedocs.org/projects/sphinxcontrib-napoleon/
               # 'sphinx.ext.napoleon'       # use this in Sphinx 1.3+
              ]
 
@@ -50,7 +51,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Python-Future'
-copyright = u'2013-2019, Python Charmers Pty Ltd, Australia'
+copyright = u'2013-2016, Python Charmers Pty Ltd, Australia'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

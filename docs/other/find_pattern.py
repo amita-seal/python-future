@@ -38,7 +38,6 @@ which is exactly what I was after.
 Larger snippets can be placed in a file (as opposed to a command-line
 arg) and processed with the -f option.
 """
-from __future__ import print_function
 
 __author__ = "Collin Winter <collinw@gmail.com>"
 
@@ -66,7 +65,7 @@ def main(args):
     elif len(args) > 1:
         tree = driver.parse_stream(StringIO(args[1] + "\n"))
     else:
-        print("You must specify an input file or an input string", file=sys.stderr)
+        print >>sys.stderr, "You must specify an input file or an input string"
         return 1
 
     examine_tree(tree)
@@ -76,10 +75,10 @@ def examine_tree(tree):
     for node in tree.post_order():
         if isinstance(node, pytree.Leaf):
             continue
-        print(repr(str(node)))
+        print repr(str(node))
         verdict = raw_input()
         if verdict.strip():
-            print(find_pattern(node))
+            print find_pattern(node)
             return
 
 def find_pattern(node):

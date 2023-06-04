@@ -10,3 +10,4 @@ We strive to support compatibility between versions of ``python-future``. Part o
 
 Upgrading to v0.12
 ==================
+

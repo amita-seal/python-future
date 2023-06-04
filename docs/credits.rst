@@ -8,18 +8,18 @@ Licence
 The software is distributed under an MIT licence. The text is as follows
 (from ``LICENSE.txt``)::
 
-    Copyright (c) 2013-2019 Python Charmers Pty Ltd, Australia
-
+    Copyright (c) 2013-2016 Python Charmers Pty Ltd, Australia
+    
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     copies of the Software, and to permit persons to whom the Software is
     furnished to do so, subject to the following conditions:
-
+    
     The above copyright notice and this permission notice shall be included in
     all copies or substantial portions of the Software.
-
+    
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -30,98 +30,61 @@ The software is distributed under an MIT licence. The text is as follows
 
 .. _sponsor:
 
-Sponsors
---------
+Sponsor
+-------
 Python Charmers Pty Ltd, Australia, and Python Charmers Pte Ltd, Singapore.
 http://pythoncharmers.com
 
-Pinterest https://opensource.pinterest.com/
 
 .. _authors:
 
-Maintainer
-----------
-Python-Future is currently maintained by Jordan M. Adler <jordan.m.adler@gmail.com>.
-
 Authors
 -------
-Python-Future is largely written by Ed Schofield <ed@pythoncharmers.com> with the help of various contributors:
 
-- Jordan Adler
-- Jeroen Akkerman
-- Kyle Altendorf
-- Grant Bakker
+Python-Future is written and maintained by Ed Schofield with the help of
+various contributors:
+
+Development Lead
+~~~~~~~~~~~~~~~~
+
+- Ed Schofield <ed@pythoncharmers.com>
+
+Patches
+~~~~~~~
+
 - Jacob Beck
-- Fumihiro (Ben) Bessho
-- Shiva Bhusal
-- Nate Bogdanowicz
-- Tomer Chachamu
-- Christian Clauss
 - Denis Cornehl
 - Nicolas Delaby
-- Chad Dombrova
-- Jon Dufresne
 - Corey Farwell
 - Eric Firing
-- Joe Gordon
-- Maximilian Hils
-- Miro Hrončok
-- Mark Huang
-- Martijn Jacobs
 - Michael Joseph
 - Waldemar Kornewald
 - Alexey Kotlyarov
-- Steve Kowalik
 - Lion Krischer
 - Marcin Kuzminski
 - Joshua Landau
 - German Larrain
 - Chris Lasher
-- ghanshyam lele
-- Calum Lind
-- Tobias Megies
-- Anika Mukherji
-- Jon Parise
-- Matthew Parnell
-- Tom Picton
-- Miga Purg
-- Éloi Rivard
-- Sesh Sadasivam
 - Elliott Sales de Andrade
-- Aiden Scandella
-- Yury Selivanov
 - Tim Shaffer
-- Sameera Somisetty
-- Louis Sautier
-- Gregory P. Smith
-- Chase Sterling
 - Daniel Szoska
-- Flaviu Tamas
 - Jeff Tratner
 - Tim Tröndle
 - Brad Walker
-- Andrew Wason
-- Jeff Widman
-- Dan Yeaw
-- Hackalog (GitHub user)
-- lsm (GiHub user)
-- Mystic-Mirage (GitHub user)
-- str4d (GitHub user)
-- ucodery (GitHub user)
-- urain39 (GitHub user)
-- 9seconds (GitHub user)
-- Varriount (GitHub user)
+- Mystic-Mirage (GitHub)
+- str4d (GitHub)
+- 9seconds (GitHub)
+- Varriount (GitHub)
 
 Suggestions and Feedback
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Chris Adams
 - Martijn Faassen
-- Joe Gordon
 - Lion Krischer
 - Danielle Madeley
 - Val Markovic
-- wluebbe (GitHub user)
+- wluebbe (GitHub)
 
 
 Other Credits
@@ -149,3 +112,4 @@ Other Credits
 
 - ``past.translation`` is inspired by and borrows some code from Sanjay Vinip's
   ``uprefix`` module.
+
